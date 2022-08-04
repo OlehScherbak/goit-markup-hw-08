@@ -1,0 +1,57 @@
+/* 
+    advantages
+    block
+ */
+
+.advantages {
+    &__title {
+        font-size: 14px;
+        font-weight: 700;
+        text-align: left;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+
+    &__icon-container {
+        height: 120px;
+        background-color: $background-color-secondary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__icon {
+        width: 70px;
+        height: 70px;
+        fill: $main-text-color;
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 1.71;
+        letter-spacing: 0.03em;
+        color: $text-grey;
+        margin: 0;
+    }
+}    
+
+
+
+/* 
+    advantages-grid
+    block
+ */
+
+.advantages-grid {
+    display: flex;
+
+    &__item {
+        width: 270px;
+    }
+
+    &__item:not(:last-child) {
+        margin-right: 30px;
+    }
+}

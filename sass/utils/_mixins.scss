@@ -9,3 +9,7 @@
 @mixin social_link_inactive_bgc($bgc-color) {
     background-color: $bgc-color;
 }
+
+@mixin grid-column-width ($columns-quontity, $col-gap) {
+    width: calc((100% - $columns-quontity * $col-gap) / $columns-quontity);
+}

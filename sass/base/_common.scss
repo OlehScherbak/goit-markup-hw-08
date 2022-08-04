@@ -5,19 +5,40 @@ body {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.17;
+    letter-spacing: 0.03em;
     color: $main-text-color;
     background-color: $background-color-primary;
 }
 
 .container {
     margin: 0 auto;
-    width: 1200px;
     padding: 0 15px;
+
+    @media screen and (min-width: $mobile) {
+            width: $mobile;
+    }
+    
+    @media screen and (min-width: $tablet) {
+        width: $tablet;
+    }
+    
+    @media screen and (min-width: $desktop) {
+        width: $desktop;
+    }
+
+    @media screen and (max-width: 320) {
+        overflow: auto;
+    }
 }
 
 .section {
-    padding-top: 94px;
-    padding-bottom: 94px;
+    padding-top:60px;
+    padding-bottom:60px;
+
+    @media screen and (min-width: 1600px) {
+        padding-top: 94px;
+        padding-bottom: 94px;
+    }
 
     &__title {
             font-size: 36px;

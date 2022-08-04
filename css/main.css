@@ -330,19 +330,45 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.17;
+  letter-spacing: 0.03em;
   color: #212121;
   background-color: #ffffff;
 }
 
 .container {
   margin: 0 auto;
-  width: 1200px;
   padding: 0 15px;
+}
+@media screen and (min-width: 480px) {
+  .container {
+    width: 480px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
+}
+@media screen and (max-width: 320) {
+  .container {
+    overflow: auto;
+  }
 }
 
 .section {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+@media screen and (min-width: 1600px) {
+  .section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 .section__title {
   font-size: 36px;
@@ -743,26 +769,32 @@ block
 .hero {
   background-color: #c4c4c4;
   text-align: center;
-  padding: 200px 0;
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/hero-bgimg.jpg);
-  background-image: linear-gradient(90deg, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-bgimg.jpg);
-  max-width: 1600px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  margin: 0 auto;
+  padding: 118px 0;
+  min-width: 320px;
+}
+@media screen and (min-width: 1200px) {
+  .hero {
+    padding: 200px 0;
+  }
 }
 .hero__title {
-  font-size: 44px;
   font-weight: 900;
-  line-height: 1.36;
+  font-size: 26px;
+  line-height: 1.62;
   letter-spacing: 0.06em;
   text-align: center;
   text-transform: uppercase;
   color: #ffffff;
-  width: 696px;
+  width: 360px;
   margin: 0 auto;
   margin-bottom: 30px;
+}
+@media screen and (min-width: 1200px) {
+  .hero__title {
+    font-size: 44px;
+    line-height: 1.36;
+    width: 696px;
+  }
 }
 .hero__button {
   border-radius: 4px;
@@ -773,10 +805,17 @@ block
   line-height: 1.88;
   letter-spacing: 0.06em;
   text-align: center;
-  padding: 10px 32px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 200px;
   cursor: pointer;
   -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media screen and (min-width: 1200px) {
+  .hero__button {
+    width: 216px;
+  }
 }
 .hero__button:hover, .hero__button:focus {
   background-color: #188ce8;
@@ -789,24 +828,21 @@ block
 .advantages__title {
   font-size: 14px;
   font-weight: 700;
-  text-align: left;
+  text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
   margin-top: 30px;
   margin-bottom: 10px;
 }
+@media screen and (min-width: 768px) {
+  .advantages__title {
+    text-align: left;
+  }
+}
 .advantages__icon-container {
-  height: 120px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   background-color: #f5f4fa;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  text-align: center;
 }
 .advantages__icon {
   width: 70px;
@@ -816,7 +852,6 @@ block
 .advantages__text {
   font-size: 14px;
   line-height: 1.71;
-  letter-spacing: 0.03em;
   color: #757575;
   margin: 0;
 }
@@ -826,15 +861,30 @@ block
     block
  */
 .advantages-grid {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  margin: -15px;
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .advantages-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 .advantages-grid__item {
-  width: 270px;
+  margin: 15px;
 }
-.advantages-grid__item:not(:last-child) {
-  margin-right: 30px;
+@media screen and (min-width: 768px) {
+  .advantages-grid__item {
+    width: calc((100% - 60px) / 2);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .advantages-grid__item {
+    width: calc((100% - 120px) / 4);
+  }
 }
 
 /* 
