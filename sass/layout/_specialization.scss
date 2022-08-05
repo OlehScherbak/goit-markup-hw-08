@@ -5,6 +5,10 @@
  */
 
 .specialization {
+    @media screen and (max-width: calc($desktop - 1px)) {
+        display: none;
+    } 
+   
     padding-top: 0;
 
     &__thumb {

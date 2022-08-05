@@ -45,10 +45,22 @@
 */
 .clients-grid {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: calc(-0.5 * $columns-gap);
 
     &__item {
-        width: 170px;
         height: 92px;
+        @include grid-column-width(2, $columns-gap);
+        margin: calc($columns-gap / 2);
+
+        @media screen and (min-width: $tablet) {
+            @include grid-column-width(3, $columns-gap);
+            margin: calc($columns-gap / 2);
+        }
+
+        @media screen and (min-width: $desktop) {
+            @include grid-column-width(6, $columns-gap);
+        }
+
     }
 }
