@@ -69,20 +69,28 @@ block
 */
 
 .cases-grid {
-    display: flex;
-    flex-wrap: wrap;
-    
-    &__item {
-        width: calc((100% - 2 * 30px) / 3);
-        border: 1px solid #eeeeee;
-        border-radius: 0px;
+    @media screen and (min-width: $tablet) {
+        display: flex;
+        flex-wrap: wrap;
+        margin: calc(-0.5 * $columns-gap);
     }
-    
-    &__item:not(:nth-child(3n)) {
-        margin-right: 30px;
+}
+
+.cases-grid__item {
+   
+    @media screen and (min-width: $tablet) {
+        @include grid-column-width($tablet-columns-quontity, $columns-gap);
+        margin: calc($columns-gap / 2);
     }
-    
-    &__item:not(:nth-last-child(-n + 3)) {
-        margin-bottom: 30px;
+
+    @media screen and (min-width: $desktop) {
+        @include grid-column-width($desktop-columns-quontity-cases, $columns-gap);
     }
+
+
+    &:not(:last-child) {
+        @media screen and (max-width: calc($tablet - 1px)) {
+            margin-bottom: 30px;
+        }
+    } 
 }
