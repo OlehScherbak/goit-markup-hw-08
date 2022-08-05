@@ -1,7 +1,9 @@
 /* header */
 
 .header {
-    display: flex;
+    @media screen and (min-width: $tablet) {
+        display: flex;
+    }
     border-bottom: 1px solid #ececec;
 }
 
@@ -11,11 +13,12 @@
 */
 
 .header-link {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    
     color: $main-text-color;
     display: flex;
     align-items: center;
-    padding-top: 32px;
-    padding-bottom: 32px;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.02em;
@@ -60,11 +63,17 @@
    block
 */
 .header-nav {
-    display: flex;
-    align-items: center;
+    @media screen and (min-width: $tablet) {
+            display: flex;
+            align-items: center;
+    }
 }
 
 .header-nav__list {
+    @media screen and (max-width: calc($tablet - 1px)) {
+        display: none;
+    }
+    
     display: flex;
     
     .header-nav__item+.header-nav__item {
@@ -74,35 +83,50 @@
 
 
 
-
-
-
-
-
-
-
 /* header-contacts
 block
 */
 .header-contacts {
-    display: flex;
-    margin-left: auto;
-}    
-
-.header-contacts__item:not(:last-child) {
-    margin-right: 50px;
-}    
-
-.header-contacts__icon {
-    width: 16px;
-    height: 12px;
-    margin-right: 10px;
-    fill: $text-grey;
-    
-    &--smartfone {
-        width: 10px;
-        height: 16px;
-    }
+    @media screen and (max-width: calc($desktop - 1px)) {
+        padding-top: 21px;
+        padding-bottom: 21px;
+        
+        &__item:not(:last-child) {
+            margin-bottom: 10px;
+        }
+        
+        & .header-link {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }  
 }
+
+    @media screen and (max-width: calc($tablet - 1px)) {
+        display: none;
+    }
+
+    @media screen and (min-width: $desktop) {
+        display: flex;
+        
+        &__item:not(:last-child) {
+            margin-right: 50px;
+        }    
+    }
+
+    margin-left: auto;
+       
+    &__icon {
+        width: 16px;
+        height: 12px;
+        margin-right: 10px;
+        fill: $text-grey;
+        
+        &--smartfone {
+            width: 10px;
+            height: 16px;
+        }
+    }
+}    
+
 
 

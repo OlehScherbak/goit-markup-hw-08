@@ -9,8 +9,11 @@
     &__span {
         color: $color-axcent;
     }
+    
+    @media screen and (max-width: calc($desktop - 1px)) {
+    font-size: 24px;
+    }
 }
-
 
 .header__logo {
     @include logo-secondary-color($text-black);
