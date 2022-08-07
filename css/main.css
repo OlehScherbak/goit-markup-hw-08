@@ -388,6 +388,7 @@ body.modal-open {
 /* modal */
 .backdrop {
   position: fixed;
+  z-index: 25;
   top: 0;
   left: 0;
   width: 100%;
@@ -423,6 +424,11 @@ body.modal-open {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   background-color: #ffffff;
+}
+@media screen and (max-width: 320px) {
+  .modal {
+    overflow: scroll;
+  }
 }
 @media screen and (min-width: 1200px) {
   .modal {
@@ -793,11 +799,6 @@ block
     padding-bottom: 0px;
   }
 }
-@media screen and (max-width: 767px) {
-  .header-contacts {
-    display: block;
-  }
-}
 @media screen and (min-width: 1200px) {
   .header-contacts {
     display: -webkit-box;
@@ -887,16 +888,25 @@ block
   .header-nav__item:last-child {
     margin-bottom: 306px;
   }
-  .header-contacts__item:nth-child(1) .header-link__header-contacts {
-    font-size: 34px;
-    color: #2196f3;
+  .header-contacts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
   }
-  .header-contacts__item:last-child {
+  .header-contacts__item:nth-child(1) {
     margin-top: 32px;
     margin-bottom: 64px;
   }
-  .header-contacts__item:last-child .header-link__header-contacts {
+  .header-contacts__item:nth-child(1) .header-link__header-contacts {
     font-size: 24px;
+  }
+  .header-contacts__item:last-child .header-link__header-contacts {
+    font-size: 34px;
+    color: #2196f3;
   }
   .header-contacts__icon {
     display: none;
@@ -1283,8 +1293,8 @@ block
 }
 
 /*
-    filters (btn-grid)
-    block
+filters (btn-grid)
+block
 */
 .btn-grid {
   display: -webkit-box;
@@ -1295,6 +1305,9 @@ block
           justify-content: center;
   margin-bottom: 30px;
 }
+.btn-grid__item:not(:last-child) {
+  margin-right: 8px;
+}
 @media screen and (max-width: 767px) {
   .btn-grid {
     -ms-flex-wrap: wrap;
@@ -1304,7 +1317,7 @@ block
             justify-content: start;
     margin-bottom: 40px;
   }
-  .btn-grid__item:nth-child(1) {
+  .btn-grid__item:not(:last-child) {
     margin-bottom: 15px;
   }
 }
@@ -1312,9 +1325,6 @@ block
   .btn-grid {
     margin-bottom: 50px;
   }
-}
-.btn-grid__item:not(:last-child) {
-  margin-right: 8px;
 }
 
 /* 
@@ -1393,6 +1403,9 @@ block
   }
 }
 
+.cases-grid__item {
+  border: 1px solid #eeeeee;
+}
 @media screen and (min-width: 768px) {
   .cases-grid__item {
     width: calc((100% - 60px) / 2);
